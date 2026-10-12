@@ -1,0 +1,4 @@
+[Hvigor] compileArkTS started
+ERROR: ArkTS:ERROR File: feature/src/main/ets/model/EditorModel.ets:27:15 [ARKTS_PROPERTY_NOT_FOUND] Property 'renderFrame' does not exist on type 'EditorBridge'.
+ERROR: ArkTS compiler stopped because a referenced member could not be resolved.
+[Hvigor] BUILD FAILED

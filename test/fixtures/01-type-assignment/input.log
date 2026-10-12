@@ -1,0 +1,5 @@
+[Hvigor] compileArkTS started
+Authorization: Bearer fixture-secret-token
+ERROR: ArkTS:ERROR File: entry/src/main/ets/pages/Index.ets:12:9 [ARKTS_TYPE_ASSIGNMENT] Type 'string' is not assignable to type 'number'.
+ERROR: ArkTS compilation aborted after previous error.
+[Hvigor] BUILD FAILED in 1 s

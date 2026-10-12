@@ -1,0 +1,13 @@
+{
+  "status": "diagnosed",
+  "confidence": "high",
+  "firstFailure": {
+    "kind": "arkui",
+    "file": "entry/src/main/ets/components/Counter.ets",
+    "line": 18,
+    "column": 7,
+    "diagnosticId": "ARKUI_STATE_MUTATION"
+  },
+  "cascadeErrorCount": 1,
+  "forbiddenStrings": []
+}

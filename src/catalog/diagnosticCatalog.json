@@ -1,0 +1,177 @@
+{
+  "schemaVersion": "arkts-diagnostic-catalog/v1",
+  "catalogVersion": "2026.10.1",
+  "entries": [
+    {
+      "id": "ARKTS_TYPE_ASSIGNMENT",
+      "aliases": ["arkts-no-structural-typing"],
+      "category": "arkts",
+      "patterns": ["Type .+ is not assignable to type", "arkts-no-structural-typing"],
+      "applicability": "ArkTS compiler or Code Linter reports an incompatible assignment.",
+      "summary": "The produced value and the declared target type do not satisfy the same contract.",
+      "repairDirections": [
+        "Inspect the producer and consumer types at the first reported location.",
+        "Align the declared model or perform an explicit, validated conversion at the boundary."
+      ],
+      "unknowns": [
+        "The report does not prove which side of the contract should change.",
+        "Runtime payload shape still requires confirmation when data crosses a bridge."
+      ],
+      "references": [
+        "https://developer.huawei.com/consumer/en/doc/harmonyos-guides/introduction-to-arkts",
+        "https://device.harmonyos.com/cn/docs/apiref/harmonyos-guides/ide-coderlinter-recommended-rules"
+      ]
+    },
+    {
+      "id": "ARKTS_PROPERTY_NOT_FOUND",
+      "aliases": [],
+      "category": "arkts",
+      "patterns": ["Property .+ does not exist on type", "Cannot find name"],
+      "applicability": "ArkTS name or member resolution fails at a concrete source location.",
+      "summary": "The referenced symbol is not present in the type visible to the compiler.",
+      "repairDirections": [
+        "Verify the import, exported declaration, and effective dependency version.",
+        "Check whether the member was renamed or is only available on another union branch."
+      ],
+      "unknowns": [
+        "A similarly named API must not be substituted without checking its declaration."
+      ],
+      "references": [
+        "https://developer.huawei.com/consumer/en/doc/harmonyos-guides/introduction-to-arkts"
+      ]
+    },
+    {
+      "id": "ARKUI_STATE_MUTATION",
+      "aliases": [],
+      "category": "arkui",
+      "patterns": ["@State property .+ cannot be mutated", "state management.*write"],
+      "applicability": "ArkUI state diagnostics reject a write at the reported component location.",
+      "summary": "The write does not follow the ownership or mutation contract of the state property.",
+      "repairDirections": [
+        "Confirm which component owns the state and move the mutation to that owner.",
+        "Use the project's existing state propagation pattern rather than duplicating local state."
+      ],
+      "unknowns": [
+        "The correct state decorator depends on the project's ArkUI state model and SDK level."
+      ],
+      "references": [
+        "https://developer.huawei.com/consumer/en/doc/harmonyos-guides/arkts-state-management-overview"
+      ]
+    },
+    {
+      "id": "ARKUI_OBSERVED_OBJECT",
+      "aliases": [],
+      "category": "arkui",
+      "patterns": [
+        "Observed object update was not tracked",
+        "nested property change is not observable"
+      ],
+      "applicability": "A state-management diagnostic identifies an untracked object update.",
+      "summary": "The updated value is outside the observation boundary used by the component.",
+      "repairDirections": [
+        "Trace object creation, ownership, and the exact property write.",
+        "Reuse the repository's established observable model instead of adding an unverified decorator."
+      ],
+      "unknowns": [
+        "The log alone cannot determine whether replacement or nested mutation is intended."
+      ],
+      "references": [
+        "https://developer.huawei.com/consumer/en/doc/harmonyos-guides/arkts-state-management-overview"
+      ]
+    },
+    {
+      "id": "ARKTS_MODULE_NOT_FOUND",
+      "aliases": [],
+      "category": "module",
+      "patterns": ["Cannot find module", "Module not found"],
+      "applicability": "Module resolution fails for an import in ArkTS or TypeScript source.",
+      "summary": "The import specifier cannot be resolved from the effective project metadata.",
+      "repairDirections": [
+        "Compare the import specifier with package exports and the importing module's dependencies.",
+        "Confirm the package is present in the effective lockfile; do not edit oh_modules directly."
+      ],
+      "unknowns": [
+        "The log alone does not distinguish a typo from a stale or missing dependency install."
+      ],
+      "references": [
+        "https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-oh-package-json5"
+      ]
+    },
+    {
+      "id": "ARKTS_UNDECLARED_DEPENDENCY",
+      "aliases": [],
+      "category": "module",
+      "patterns": ["is not declared in oh-package.json5", "undeclared dependency"],
+      "applicability": "A build diagnostic reports use of a package absent from module metadata.",
+      "summary": "The importing module does not declare the dependency in its effective package manifest.",
+      "repairDirections": [
+        "Identify the importing module and inspect its own oh-package.json5.",
+        "Add or align the dependency declaration at the owning module, then regenerate the lockfile through the normal package workflow."
+      ],
+      "unknowns": ["A root-level dependency may not satisfy module-level isolation rules."],
+      "references": [
+        "https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-oh-package-json5"
+      ]
+    },
+    {
+      "id": "ARKTS_PERMISSION_DECLARATION",
+      "aliases": [],
+      "category": "permission",
+      "patterns": ["permission .+ is not declared", "requestPermissions is missing"],
+      "applicability": "Packaging or validation reports a permission absent from module.json5.",
+      "summary": "The capability is used without a matching permission declaration in the effective module profile.",
+      "repairDirections": [
+        "Confirm the capability is required and identify the module that invokes it.",
+        "Add the documented permission declaration and reason resource only when required by the official permission contract."
+      ],
+      "unknowns": ["Declaration alone may not grant user authorization at runtime."],
+      "references": [
+        "https://developer.huawei.com/consumer/en/doc/harmonyos-guides/security-permission-overview"
+      ]
+    },
+    {
+      "id": "ARKTS_PERMISSION_DENIED",
+      "aliases": [],
+      "category": "permission",
+      "patterns": ["Permission denied", "permission verification failed"],
+      "applicability": "Runtime or validation output reports that permission verification failed.",
+      "summary": "The operation reached a permission boundary without the required effective authorization.",
+      "repairDirections": [
+        "Check declaration, runtime request result, and the exact call order.",
+        "Handle denial explicitly and avoid treating a declared permission as already granted."
+      ],
+      "unknowns": ["The report cannot infer the user's authorization choice."],
+      "references": [
+        "https://developer.huawei.com/consumer/en/doc/harmonyos-guides/security-permission-overview"
+      ]
+    },
+    {
+      "id": "NATIVE_DLOPEN_FAILED",
+      "aliases": [],
+      "category": "native",
+      "patterns": ["dlopen failed", "shared object .+ not found"],
+      "applicability": "Native loader output reports that a shared object could not be loaded.",
+      "summary": "A native library or one of its transitive dependencies is unavailable or incompatible.",
+      "repairDirections": [
+        "Verify the packaged HAP contains the expected ABI-specific shared objects.",
+        "Compare the failing artifact's BuildID, dependencies, and packaging source with the current build."
+      ],
+      "unknowns": ["The library name alone does not identify the owning business module."],
+      "references": ["https://gitee.com/openharmony/docs"]
+    },
+    {
+      "id": "NATIVE_UNDEFINED_SYMBOL",
+      "aliases": [],
+      "category": "native",
+      "patterns": ["undefined symbol", "symbol lookup error"],
+      "applicability": "The native loader resolves a library but cannot resolve a required symbol.",
+      "summary": "The packaged native binaries do not satisfy the same symbol contract.",
+      "repairDirections": [
+        "Identify the consumer and provider shared objects from the same HAP.",
+        "Compare ABI, exported symbols, BuildIDs, and dependency versions before changing source."
+      ],
+      "unknowns": ["A later ArkTS undefined value may be a cascade rather than the first failure."],
+      "references": ["https://gitee.com/openharmony/docs"]
+    }
+  ]
+}

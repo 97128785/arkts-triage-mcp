@@ -1,0 +1,4 @@
+[Hvigor] compileArkTS started
+ERROR: ArkTS:ERROR File: feature/src/main/ets/pages/SharePage.ets:6:1 [ARKTS_MODULE_NOT_FOUND] Cannot find module '@sample/media-kit' or its corresponding type declarations.
+ERROR: Dependency analysis failed after an unresolved import.
+[Hvigor] BUILD FAILED

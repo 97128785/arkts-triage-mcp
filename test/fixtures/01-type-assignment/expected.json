@@ -1,0 +1,13 @@
+{
+  "status": "diagnosed",
+  "confidence": "high",
+  "firstFailure": {
+    "kind": "arkts",
+    "file": "entry/src/main/ets/pages/Index.ets",
+    "line": 12,
+    "column": 9,
+    "diagnosticId": "ARKTS_TYPE_ASSIGNMENT"
+  },
+  "cascadeErrorCount": 1,
+  "forbiddenStrings": ["fixture-secret-token"]
+}

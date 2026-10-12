@@ -1,0 +1,10 @@
+{
+  "status": "diagnosed",
+  "confidence": "medium",
+  "firstFailure": {
+    "kind": "native",
+    "diagnosticId": "NATIVE_DLOPEN_FAILED"
+  },
+  "cascadeErrorCount": 1,
+  "forbiddenStrings": []
+}

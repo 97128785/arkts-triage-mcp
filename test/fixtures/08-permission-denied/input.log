@@ -1,0 +1,3 @@
+10-12 09:15:23.110 1200 1200 I SampleApp: opening camera
+10-12 09:15:23.115 1200 1200 E SampleApp: [ARKTS_PERMISSION_DENIED] Permission denied while opening camera; permission verification failed.
+10-12 09:15:23.116 1200 1200 E SampleApp: Feature initialization failed after permission denial.

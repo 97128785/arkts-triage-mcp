@@ -1,0 +1,4 @@
+[Hvigor] dependency validation started
+ERROR: File: feature/oh-package.json5:8:5 [ARKTS_UNDECLARED_DEPENDENCY] Dependency '@sample/codec' is not declared in oh-package.json5.
+ERROR: Module dependency graph could not be completed.
+[Hvigor] BUILD FAILED

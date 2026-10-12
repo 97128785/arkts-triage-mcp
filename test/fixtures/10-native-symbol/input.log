@@ -1,0 +1,4 @@
+10-12 09:25:42.202 1400 1400 I linker: resolving native imports
+10-12 09:25:42.209 1400 1400 E linker: [NATIVE_UNDEFINED_SYMBOL] dlopen failed: undefined symbol: Sample_CreateSession referenced by libsample_bridge.so.
+10-12 09:25:42.211 1400 1400 E SampleApp: ArkTS bridge initialization failed after the undefined symbol.
+[Hvigor] BUILD FAILED

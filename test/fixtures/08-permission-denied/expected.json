@@ -1,0 +1,10 @@
+{
+  "status": "diagnosed",
+  "confidence": "medium",
+  "firstFailure": {
+    "kind": "permission",
+    "diagnosticId": "ARKTS_PERMISSION_DENIED"
+  },
+  "cascadeErrorCount": 1,
+  "forbiddenStrings": []
+}

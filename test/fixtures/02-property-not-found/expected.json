@@ -1,0 +1,13 @@
+{
+  "status": "diagnosed",
+  "confidence": "high",
+  "firstFailure": {
+    "kind": "arkts",
+    "file": "feature/src/main/ets/model/EditorModel.ets",
+    "line": 27,
+    "column": 15,
+    "diagnosticId": "ARKTS_PROPERTY_NOT_FOUND"
+  },
+  "cascadeErrorCount": 1,
+  "forbiddenStrings": []
+}

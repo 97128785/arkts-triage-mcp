@@ -1,0 +1,3 @@
+10-12 09:20:01.001 1300 1300 I linker: loading application libraries
+10-12 09:20:01.008 1300 1300 E linker: [NATIVE_DLOPEN_FAILED] dlopen failed: shared object libsample_effect.so not found.
+10-12 09:20:01.010 1300 1300 E SampleApp: ArkTS bridge initialization failed.

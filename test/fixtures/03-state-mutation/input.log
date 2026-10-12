@@ -1,0 +1,4 @@
+[Hvigor] compileArkTS started
+ERROR: ArkUI validation File: entry/src/main/ets/components/Counter.ets:18:7 [ARKUI_STATE_MUTATION] @State property 'count' cannot be mutated from this callback owner.
+ERROR: ArkTS compilation aborted after previous error.
+[Hvigor] BUILD FAILED

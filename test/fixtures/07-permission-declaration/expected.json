@@ -1,0 +1,13 @@
+{
+  "status": "diagnosed",
+  "confidence": "high",
+  "firstFailure": {
+    "kind": "permission",
+    "file": "entry/src/main/module.json5",
+    "line": 21,
+    "column": 9,
+    "diagnosticId": "ARKTS_PERMISSION_DECLARATION"
+  },
+  "cascadeErrorCount": 1,
+  "forbiddenStrings": []
+}

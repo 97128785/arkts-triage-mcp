@@ -1,0 +1,13 @@
+{
+  "status": "diagnosed",
+  "confidence": "high",
+  "firstFailure": {
+    "kind": "module",
+    "file": "feature/oh-package.json5",
+    "line": 8,
+    "column": 5,
+    "diagnosticId": "ARKTS_UNDECLARED_DEPENDENCY"
+  },
+  "cascadeErrorCount": 1,
+  "forbiddenStrings": []
+}

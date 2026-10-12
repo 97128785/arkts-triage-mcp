@@ -1,0 +1,4 @@
+[Hvigor] compileArkTS started
+ERROR: ArkUI validation File: shared/src/main/ets/state/TimelineState.ets:44:11 [ARKUI_OBSERVED_OBJECT] Nested property change is not observable by the consuming component.
+ERROR: State management validation failed after the first diagnostic.
+[Hvigor] BUILD FAILED

@@ -1,0 +1,13 @@
+{
+  "status": "diagnosed",
+  "confidence": "high",
+  "firstFailure": {
+    "kind": "arkui",
+    "file": "shared/src/main/ets/state/TimelineState.ets",
+    "line": 44,
+    "column": 11,
+    "diagnosticId": "ARKUI_OBSERVED_OBJECT"
+  },
+  "cascadeErrorCount": 1,
+  "forbiddenStrings": []
+}

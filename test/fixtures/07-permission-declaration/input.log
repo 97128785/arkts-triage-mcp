@@ -1,0 +1,4 @@
+[Hvigor] validateModuleProfile started
+ERROR: File: entry/src/main/module.json5:21:9 [ARKTS_PERMISSION_DECLARATION] Permission 'ohos.permission.CAMERA' is not declared in requestPermissions.
+ERROR: Module profile validation failed after a missing permission declaration.
+[Hvigor] BUILD FAILED

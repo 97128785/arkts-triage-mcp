@@ -1,0 +1,10 @@
+{
+  "status": "diagnosed",
+  "confidence": "medium",
+  "firstFailure": {
+    "kind": "native",
+    "diagnosticId": "NATIVE_UNDEFINED_SYMBOL"
+  },
+  "cascadeErrorCount": 1,
+  "forbiddenStrings": []
+}
